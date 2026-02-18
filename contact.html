@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Katrix Tech Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .bg-katrix-cyan { background-color: #00FFFF; }
+        .text-katrix-cyan { color: #00FFFF; }
+        .bg-katrix-dark { background-color: #1a1a1a; }
+    </style>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- NAV -->
+    <nav class="bg-katrix-cyan px-6 py-4 shadow-md">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <a href="index.html" class="flex-shrink-0">
+                <img src="logo.png" alt="Katrix Tech Solutions" class="h-14 w-auto object-contain bg-black rounded-lg px-2">
+            </a>
+            <div class="flex space-x-6 font-semibold text-sm mt-4 md:mt-0">
+                <a href="index.html" class="hover:opacity-70">HOME</a>
+                <a href="about.html" class="hover:opacity-70">ABOUT US</a>
+                <a href="services.html" class="hover:opacity-70">SERVICES</a>
+                <a href="projects.html" class="hover:opacity-70">PROJECTS</a>
+                <a href="contact.html" class="hover:opacity-70 border-b-2 border-black">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="relative bg-gray-900 text-white py-14">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold mb-3">Get In Touch</h1>
+            <p class="text-cyan-400 text-lg">We're here to help. Reach out and we'll respond within 24 hours.</p>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="py-16 px-6 flex-grow">
+        <div class="container mx-auto max-w-5xl">
+            <div class="grid md:grid-cols-2 gap-0 bg-white shadow-xl rounded-lg overflow-hidden">
+
+                <!-- LEFT: Contact Info -->
+                <div class="bg-katrix-dark text-white p-10 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-3 text-katrix-cyan">Contact Information</h3>
+                        <p class="mb-8 text-gray-400 text-sm">Fill out the form and our team will get back to you within 24 hours.</p>
+                        <div class="space-y-6 text-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-phone-alt text-katrix-cyan mr-4 w-4"></i>
+                                <a href="tel:+254716988564" class="hover:text-cyan-400">+254 716988564</a>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-katrix-cyan mr-4 w-4"></i>
+                                <a href="mailto:techsystems@gmail.com" class="hover:text-cyan-400">techsystems@gmail.com</a>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-katrix-cyan mr-4 w-4"></i>
+                                <span>Country Wide Service, Kenya</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4 mt-10">
+                        <a href="#" class="w-9 h-9 border border-gray-600 flex items-center justify-center hover:bg-cyan-500 transition text-sm"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 border border-gray-600 flex items-center justify-center hover:bg-cyan-500 transition text-sm"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-9 h-9 border border-gray-600 flex items-center justify-center hover:bg-cyan-500 transition text-sm"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Form -->
+                <form class="p-10 space-y-5" onsubmit="handleSubmit(event)">
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-gray-700">Full Name</label>
+                        <input type="text" required class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-gray-700">Email Address</label>
+                        <input type="email" required class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition" placeholder="your@email.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-gray-700">Service Required</label>
+                        <select class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-cyan-500 transition bg-white">
+                            <option value="">Select a service...</option>
+                            <option>CCTV Installation</option>
+                            <option>WiFi & Networking</option>
+                            <option>Website Design</option>
+                            <option>Hardware & Repair</option>
+                            <option>Software Solutions</option>
+                            <option>IT Support & Consulting</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-gray-700">Message</label>
+                        <textarea rows="4" required class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition" placeholder="How can we help you?"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-cyan-500 text-white font-bold py-3 rounded hover:bg-cyan-600 transition">
+                        Send Message
+                    </button>
+                    <p id="success-msg" class="hidden text-green-600 text-sm text-center font-semibold mt-2">
+                        ✓ Message sent! We'll be in touch shortly.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-katrix-dark text-white pt-12 pb-6 mt-auto">
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12">
+            <div>
+                <h4 class="text-katrix-cyan text-xl font-bold mb-4">About</h4>
+                <p class="text-gray-300 text-sm leading-relaxed">Katrix Tech Systems provides robust, scalable, and secure digital infrastructures.</p>
+            </div>
+            <div>
+                <h4 class="text-katrix-cyan text-xl font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-3 text-gray-300">
+                    <li><a href="index.html" class="hover:text-white">Home</a></li>
+                    <li><a href="about.html" class="hover:text-white">About Us</a></li>
+                    <li><a href="services.html" class="hover:text-white">Services</a></li>
+                    <li><a href="projects.html" class="hover:text-white">Projects</a></li>
+                    <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-katrix-cyan text-xl font-bold mb-4">Contact</h4>
+                <div class="space-y-4 text-sm text-gray-300">
+                    <p><i class="fas fa-phone-alt mr-2"></i>
+                        <a href="tel:+254716988564" class="hover:text-cyan-400">+254 716988564</a>
+                    </p>
+                    <p><i class="fas fa-envelope mr-2"></i>
+                        <a href="mailto:techsystems@gmail.com" class="hover:text-cyan-400">techsystems@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-6 text-center text-xs text-gray-500">
+            &copy; 2026 Katrix Tech Systems. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            document.getElementById('success-msg').classList.remove('hidden');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
